@@ -1,0 +1,47 @@
+.header{
+	display: flex;
+	justify-content: space-between; 
+	align-items: center;
+	padding: 43px 0px;
+	border-bottom: 1px solid #EAEAEA;
+
+	ul,
+	li{
+		list-style-type: none;
+	}
+	a{
+		text-decoration: none;
+	}
+
+	&__logo{
+		display: flex;
+		justify-content: space-between; 
+		cursor: pointer;
+		&__logo-svg{
+			margin-right: 15px;
+		}
+	}
+
+	.menu{
+		&__lists{
+			display: flex;
+			justify-content: space-between; 
+		}
+
+		&__list-item{
+			margin-right: 30px;
+		}
+		&__list-item:last-child{
+			margin-right: 0px;
+		}
+
+		&__list-item-link{
+			display: flex;
+			align-items: center;
+		}
+		.header__shop-number{
+			margin-left: 10px;
+			color: #5C5C5C;
+		}
+	}
+}
