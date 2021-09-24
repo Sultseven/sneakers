@@ -3,5 +3,5 @@
 - React Router
 - React Context
 - react-slick
-- SASS / CSS Modules
+- SASS
 - Axios
