@@ -11,7 +11,7 @@ function Header(){
 	return(
 	  <header className="header">
         <div className="header__logo">
-          <NavLink to="/shop">
+          <NavLink to="/">
             <img className="header__logo-svg" src={logoSvg} alt="logo"/>
             <div className="logo__text">
               <h2>React Sneakers</h2>

@@ -13,10 +13,10 @@ function App() {
       <div className="wrapper clear">
         <Header/>
         <Switch>
-          <Route path={'/shop'} component={Shop}/>
           <Route path={'/drawer'} component={Drawer} />
           <Route path={'/home'} component={Home} />
           <Route path={'/favorites'} component={Favorites} />
+          <Route path={'/'} component={Shop} />
         </Switch>
       </div>
     </BrowserRouter>
