@@ -1,13 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
+import Drawer from './Drawer';
 
 import logoSvg from '../assets/images/header-logo.svg';
 import profileSvg from '../assets/images/header-profile.svg';
 import likeSvg from '../assets/images/header-like.svg';
 import shopSvg from '../assets/images/header-shop.svg';
 
-function Header(){
+
+function Header(props){
+  const [isAdded, setIsAdded] = useState(false);
+
+  console.log(props);
+
 	return(
 	  <header className="header">
         <div className="header__logo">
@@ -21,9 +28,9 @@ function Header(){
         </div>
         <nav className="menu">
           <ul className="menu__lists">
-            <li className="menu__list-item">
+            <li className="menu__list-item" onClick={props.onClickCart}>
               <NavLink className="menu__list-item-link"  to="/drawer">
-                <img className="header__shop-svg" src={shopSvg} alt="shop"/><span className="header__shop-number">1205 руб.</span>
+                <img className="header__shop-svg" src={shopSvg} alt="shop" /><span className="header__shop-number">1205 руб.</span>
               </NavLink>
             </li>
             <li className="menu__list-item">
@@ -33,7 +40,7 @@ function Header(){
             </li>
             <li className="menu__list-item">
               <NavLink className="menu__list-item-link" to="/home">
-                <img className="header__profle-svg" src={profileSvg} alt="profile"/>
+                <img className="header__profle-svg" src={profileSvg} alt="profile" />
               </NavLink>
             </li>
           </ul>

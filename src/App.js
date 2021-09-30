@@ -6,14 +6,19 @@ import Drawer from './components/Drawer';
 import { Home } from './pages/Home';
 import { Favorites } from './pages/Favorites';
 import { Shop }  from './pages/Shop';
+import { useState } from 'react';
 
 function App() {
+  const [cartOpened, setCardOpened] = useState(false);
+
+
   return (
     <BrowserRouter>
       <div className="wrapper clear">
-        <Header/>
+        
+        { cartOpened ? <Drawer/> : null}
+        <Header onClickCart={ ()=>setCardOpened(true) }/>
         <Switch>
-          <Route path={'/drawer'} component={Drawer} />
           <Route path={'/home'} component={Home} />
           <Route path={'/favorites'} component={Favorites} />
           <Route path={'/'} component={Shop} />
