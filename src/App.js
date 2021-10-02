@@ -10,13 +10,16 @@ import { useState } from 'react';
 
 function App() {
   const [cartOpened, setCardOpened] = useState(false);
+  const [cartClosed, setCardClosed] = useState(true);
 
 
   return (
     <BrowserRouter>
       <div className="wrapper clear">
         
-        { cartOpened ? <Drawer/> : null}
+        { cartOpened && <Drawer onClickClose={ ()=>{
+          setCardOpened(false)
+        } }/>}
         <Header onClickCart={ ()=>setCardOpened(true) }/>
         <Switch>
           <Route path={'/home'} component={Home} />

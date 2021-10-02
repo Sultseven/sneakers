@@ -4,11 +4,15 @@ import arrowSvg from "../assets/images/arrow.svg"
 import removeSvg from "../assets/images/drawer-remove.svg"
 import Cart from './Cart';
 
-function Drawer(){
+function Drawer(props){
+  console.log(props)
 	return(
          <div className="overlay">
             <div className="drawerBlock">
-              <h2 className="mb-30 d-flex align-center justify-between">Корзина <img className="removeIcon" src={ removeSvg } alt="icon-remove"/></h2>
+              <h2 className="mb-30 d-flex align-center justify-between">
+                Корзина 
+                <img className="removeIcon" src={ removeSvg } alt="icon-remove" onClick={ props.onClickClose }/>
+              </h2>
               <div className="items">
                 <Cart/>
                 <Cart/>
